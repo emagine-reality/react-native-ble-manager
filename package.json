@@ -1,5 +1,5 @@
 {
-  "name": "react-native-ble-manager",
+  "name": "@emadev/react-native-ble-manager",
   "version": "8.1.0",
   "description": "A BLE module for react native.",
   "main": "BleManager",
