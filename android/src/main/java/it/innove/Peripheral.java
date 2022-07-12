@@ -492,6 +492,8 @@ public class Peripheral extends BluetoothGattCallback {
 
 			readRSSICallback = null;
 		}
+
+		completedCommand();
 	}
 
 	private String bufferedCharacteristicsKey(String serviceUUID, String characteristicUUID) {
@@ -735,7 +737,7 @@ public class Peripheral extends BluetoothGattCallback {
 			    if (isConnected()) {
 				readRSSICallback = callback;
 				if (! gatt.readRemoteRssi()) {
-				    readCallback = null;
+					readRSSICallback = null;
 				    sendBackrError(callback, "Read RSSI failed");
 				    completedCommand();
 				}
